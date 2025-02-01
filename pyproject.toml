@@ -7,7 +7,9 @@ authors = [
     { name = "GesonAnko", email = "59220704+Geson-anko@users.noreply.github.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pydantic>=2.10.6",
+]
 
 [build-system]
 requires = ["hatchling"]
