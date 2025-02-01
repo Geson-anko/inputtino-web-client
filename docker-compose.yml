@@ -1,0 +1,35 @@
+services:
+  inputtino:
+    image: ghcr.io/games-on-whales/inputtino:stable
+    init: true
+    volumes:
+      - /dev/input:/dev/input:rw
+    devices:
+      - /dev/uinput
+    restart: unless-stopped
+
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - inputtino-web-client:/workspace
+      - uv_cache:/root/.cache/uv
+      - pip_cache:/root/.cache/pip
+      - pre-commit_cache:/root/.cache/pre-commit
+    environment:
+      - INPUTTINO_HOST=inputtino
+      - INPUTTINO_PORT=8080
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /workspace
+    depends_on:
+      - inputtino
+
+volumes:
+  inputtino-web-client:
+    name: inputtino-web-client
+  uv_cache:
+  pip_cache:
+  pre-commit_cache:
