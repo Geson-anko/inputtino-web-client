@@ -12,6 +12,15 @@ dependencies = [
     "pydantic>=2.10.6",
 ]
 
+[project.optional-dependencies]
+cli = [
+    "cmd2>=2.5.11",
+    "tyro>=0.9.13",
+]
+
+[project.scripts]
+inputtino-cli = "inputtino_web_client.cli:main"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
