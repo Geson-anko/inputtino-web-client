@@ -1,10 +1,11 @@
 from typing import Any, Self
+
 import httpx
 
 from .models import (
+    AddDeviceRequest,
     DeviceResponse,
     DevicesListResponse,
-    AddDeviceRequest,
     DeviceType,
 )
 
