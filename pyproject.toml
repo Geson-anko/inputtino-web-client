@@ -1,0 +1,22 @@
+[project]
+name = "inputtino-web-client"
+version = "0.0.1"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "GesonAnko", email = "59220704+Geson-anko@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.1.0",
+    "pyright>=1.1.393",
+    "pytest-cov>=6.0.0",
+    "pytest-mock>=3.14.0",
+]
