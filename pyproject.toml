@@ -41,6 +41,10 @@ log_cli = "True"
 minversion = "6.0"
 testpaths = "tests/"
 
+markers = [
+    "practical: tests that interact with actual endpoints",
+]
+
 [tool.pyright]
 pythonVersion = "3.12"
 exclude = [

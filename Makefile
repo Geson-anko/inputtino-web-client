@@ -27,7 +27,13 @@ docker-attach: ## Attach to development container
 format: ## Run pre-commit hooks
 	uv run pre-commit run -a
 
-test: ## Run tests
+test: ## Run unit tests excluding practical tests
+	uv run pytest -v -m "not practical" --cov
+
+test-practical: ## Run practical tests with actual endpoints
+	uv run pytest -v -m practical --cov
+
+test-full: ## Run full test
 	uv run pytest -v --cov
 
 type: ## Run type check
