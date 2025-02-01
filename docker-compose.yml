@@ -1,6 +1,7 @@
 services:
   inputtino:
     image: ghcr.io/games-on-whales/inputtino:stable
+    privileged: true
     init: true
     volumes:
       - /dev/input:/dev/input:rw
