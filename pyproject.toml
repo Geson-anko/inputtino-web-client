@@ -18,13 +18,9 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "inputtino-web-client",
     "pre-commit>=4.1.0",
     "pyright>=1.1.393",
     "pytest>=8.3.4",
     "pytest-cov>=6.0.0",
     "pytest-mock>=3.14.0",
 ]
-
-[tool.uv.sources]
-inputtino-web-client = { workspace = true }
