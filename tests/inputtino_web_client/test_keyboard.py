@@ -1,7 +1,7 @@
 import pytest
 from pytest_mock import MockerFixture
 
-from inputtino_web_client.keyboard import Keyboard
+from inputtino_web_client.keyboard import Keyboard, KeyCode
 from inputtino_web_client.models import DeviceResponse
 from tests.helpers import mark_practical
 
@@ -41,7 +41,9 @@ def test_press(keyboard: Keyboard, mocker: MockerFixture):
     mock_post = mocker.patch.object(keyboard, "_post")
     keyboard.press("a")
 
-    mock_post.assert_called_once_with("/devices/keyboard/123/press", json={"key": "a"})
+    mock_post.assert_called_once_with(
+        "/devices/keyboard/123/press", json={"key": KeyCode.A}
+    )
 
 
 def test_release(keyboard: Keyboard, mocker: MockerFixture):
@@ -49,7 +51,7 @@ def test_release(keyboard: Keyboard, mocker: MockerFixture):
     keyboard.release("b")
 
     mock_post.assert_called_once_with(
-        "/devices/keyboard/123/release", json={"key": "b"}
+        "/devices/keyboard/123/release", json={"key": KeyCode.B}
     )
 
 

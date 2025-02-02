@@ -58,7 +58,7 @@ class MouseScrollRequest(BaseModel):
 
 
 class KeyboardRequest(BaseModel):
-    key: str
+    key: int
 
 
 class SuccessResponse(BaseModel):
