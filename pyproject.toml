@@ -1,7 +1,7 @@
 [project]
 name = "inputtino-web-client"
 version = "0.0.1"
-description = "Add your description here"
+description = "A Python library for controlling mouse and keyboard input through the Inputtino HTTP API."
 readme = "README.md"
 authors = [
     { name = "GesonAnko", email = "59220704+Geson-anko@users.noreply.github.com" }
