@@ -1,6 +1,6 @@
 [project]
 name = "inputtino-web-client"
-version = "0.0.1"
+version = "0.1.0"
 description = "A Python library for controlling mouse and keyboard input through the Inputtino HTTP API."
 readme = "README.md"
 authors = [
@@ -39,6 +39,10 @@ cli = [
 
 [project.scripts]
 inputtino-cli = "inputtino_web_client.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Geson-anko/inputtino-web-client"
+Issues = "https://github.com/Geson-anko/inputtino-web-client/issues"
 
 [build-system]
 requires = ["hatchling"]
