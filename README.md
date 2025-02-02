@@ -17,6 +17,7 @@ A Python library for controlling mouse and keyboard input through the Inputtino 
 
 - Python 3.12 or higher
 - Running Inputtino server (see [Games-on-Whales/inputtino](https://github.com/games-on-whales/inputtino))
+- Linux operating system (Windows and macOS are not supported)
 
 ## Installation
 
