@@ -60,6 +60,9 @@ class KeyCode(IntEnum):
 
     This class provides a mapping between human-readable key names and
     their corresponding virtual key codes used by the input system.
+
+    Key codes are referred from
+    <https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes>
     """
 
     # Standard Keys
