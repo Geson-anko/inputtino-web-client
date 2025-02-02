@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from enum import IntEnum
 
 from .base_client import InputtinoBaseClient
@@ -29,7 +31,7 @@ class Keyboard(InputtinoBaseClient):
         Args:
             key: Key to press
         """
-        request = KeyboardRequest(key=get_keycode_from_string(key))
+        request = KeyboardRequest(key=KeyCode.from_str(key))
         self._post(
             f"/devices/keyboard/{self.device_id}/press", json=request.model_dump()
         )
@@ -40,7 +42,7 @@ class Keyboard(InputtinoBaseClient):
         Args:
             key: Key to release
         """
-        request = KeyboardRequest(key=get_keycode_from_string(key))
+        request = KeyboardRequest(key=KeyCode.from_str(key))
         self._post(
             f"/devices/keyboard/{self.device_id}/release", json=request.model_dump()
         )
@@ -210,6 +212,10 @@ class KeyCode(IntEnum):
     BACKSLASH = 0xDC  # \|
     CLOSE_BRACKET = 0xDD  # ]}
     QUOTE = 0xDE  # '"
+
+    @staticmethod
+    def from_str(string: str) -> KeyCode:
+        return get_keycode_from_string(string)
 
 
 def get_keycode_from_string(key: str) -> KeyCode:
