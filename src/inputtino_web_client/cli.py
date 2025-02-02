@@ -6,7 +6,7 @@ from dataclasses import dataclass
 import cmd2
 from tyro import cli
 
-from .keyboard import Keyboard
+from .keyboard import Keyboard, KeyCode
 from .models import MouseButton, ScrollDirection
 from .mouse import Mouse
 
@@ -74,7 +74,7 @@ class InputtinoCLI(cmd2.Cmd):
         Usage: type <key>
         """
         if args:
-            self.keyboard.type(args)
+            self.keyboard.type(KeyCode.from_str(args))
         else:
             print("Usage: type <key>")
 

@@ -25,29 +25,29 @@ class Keyboard(InputtinoBaseClient):
         """Get the device ID of the keyboard."""
         return self.device.device_id
 
-    def press(self, key: str) -> None:
+    def press(self, key: KeyCode) -> None:
         """Press a keyboard key.
 
         Args:
             key: Key to press
         """
-        request = KeyboardRequest(key=KeyCode.from_str(key))
+        request = KeyboardRequest(key=key)
         self._post(
             f"/devices/keyboard/{self.device_id}/press", json=request.model_dump()
         )
 
-    def release(self, key: str) -> None:
+    def release(self, key: KeyCode) -> None:
         """Release a keyboard key.
 
         Args:
             key: Key to release
         """
-        request = KeyboardRequest(key=KeyCode.from_str(key))
+        request = KeyboardRequest(key=key)
         self._post(
             f"/devices/keyboard/{self.device_id}/release", json=request.model_dump()
         )
 
-    def type(self, key: str) -> None:
+    def type(self, key: KeyCode) -> None:
         """Type a key (press and release).
 
         Args:

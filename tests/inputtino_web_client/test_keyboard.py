@@ -39,7 +39,7 @@ def test_init(mocker: MockerFixture, keyboard_device: DeviceResponse):
 
 def test_press(keyboard: Keyboard, mocker: MockerFixture):
     mock_post = mocker.patch.object(keyboard, "_post")
-    keyboard.press("a")
+    keyboard.press(KeyCode.A)
 
     mock_post.assert_called_once_with(
         "/devices/keyboard/123/press", json={"key": KeyCode.A}
@@ -48,7 +48,7 @@ def test_press(keyboard: Keyboard, mocker: MockerFixture):
 
 def test_release(keyboard: Keyboard, mocker: MockerFixture):
     mock_post = mocker.patch.object(keyboard, "_post")
-    keyboard.release("b")
+    keyboard.release(KeyCode.B)
 
     mock_post.assert_called_once_with(
         "/devices/keyboard/123/release", json={"key": KeyCode.B}
@@ -59,10 +59,10 @@ def test_type(keyboard: Keyboard, mocker: MockerFixture):
     mock_press = mocker.patch.object(keyboard, "press")
     mock_release = mocker.patch.object(keyboard, "release")
 
-    keyboard.type("c")
+    keyboard.type(KeyCode.C)
 
-    mock_press.assert_called_once_with("c")
-    mock_release.assert_called_once_with("c")
+    mock_press.assert_called_once_with(KeyCode.C)
+    mock_release.assert_called_once_with(KeyCode.C)
 
 
 @mark_practical
@@ -70,7 +70,7 @@ def test_practical_keyboard_operations(practical_client_address):
     """Test basic keyboard operations with actual API."""
     host, port = practical_client_address
     keyboard = Keyboard(host=host, port=port)
-    keyboard.type("a")
-    keyboard.press("shift")
-    keyboard.type("b")
-    keyboard.release("shift")
+    keyboard.type(KeyCode.A)
+    keyboard.press(KeyCode.SHIFT)
+    keyboard.type(KeyCode.B)
+    keyboard.release(KeyCode.SHIFT)
