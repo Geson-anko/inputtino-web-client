@@ -11,6 +11,25 @@ dependencies = [
     "httpx>=0.28.1",
     "pydantic>=2.10.6",
 ]
+keywords = [
+  "control",
+  "gui",
+  "automation",
+  "keyboard",
+  "mouse",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: X11 Applications",
+  "Natural Language :: English",
+  "Natural Language :: Japanese",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
 
 [project.optional-dependencies]
 cli = [
