@@ -40,6 +40,10 @@ cli = [
 [project.scripts]
 inputtino-cli = "inputtino_web_client.cli:main"
 
+[project.urls]
+Repository = "https://github.com/Geson-anko/inputtino-web-client"
+Issues = "https://github.com/Geson-anko/inputtino-web-client/issues"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
