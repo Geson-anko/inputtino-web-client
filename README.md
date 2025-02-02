@@ -9,6 +9,10 @@ A Python library for controlling mouse and keyboard input through the Inputtino 
 - Type-safe API with complete type hints
 - CLI tool for interactive control
 
+## Current Limitations
+
+- Gamepad inputs are not currently supported
+
 ## Requirements
 
 - Python 3.12 or higher
