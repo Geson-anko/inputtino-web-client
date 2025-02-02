@@ -1,7 +1,7 @@
 [project]
 name = "inputtino-web-client"
-version = "0.0.1"
-description = "Add your description here"
+version = "0.1.0"
+description = "A Python library for controlling mouse and keyboard input through the Inputtino HTTP API."
 readme = "README.md"
 authors = [
     { name = "GesonAnko", email = "59220704+Geson-anko@users.noreply.github.com" }
@@ -10,6 +10,25 @@ requires-python = ">=3.12"
 dependencies = [
     "httpx>=0.28.1",
     "pydantic>=2.10.6",
+]
+keywords = [
+  "control",
+  "gui",
+  "automation",
+  "keyboard",
+  "mouse",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: X11 Applications",
+  "Natural Language :: English",
+  "Natural Language :: Japanese",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
 ]
 
 [project.optional-dependencies]
@@ -20,6 +39,10 @@ cli = [
 
 [project.scripts]
 inputtino-cli = "inputtino_web_client.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Geson-anko/inputtino-web-client"
+Issues = "https://github.com/Geson-anko/inputtino-web-client/issues"
 
 [build-system]
 requires = ["hatchling"]
