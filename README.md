@@ -1,3 +1,5 @@
+# The Web API functionality has already been deprecated; consider using Python Binding. See https://github.com/games-on-whales/inputtino?tab=readme-ov-file#using-the-python-bindings
+
 # Inputtino Web Client
 
 A Python library for controlling mouse and keyboard input through the Inputtino HTTP API. This library provides a clean, type-safe interface for programmatic input control.
